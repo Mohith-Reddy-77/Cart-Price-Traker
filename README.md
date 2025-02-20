@@ -1,4 +1,5 @@
 **Description**
+
 This Shopping System is a simple and interactive application built using Tkinter in Python, allowing users to set a budget, search for items, add them to their cart, and complete a checkout process. The system categorizes products, displays their details such as price, stock, and allows users to manage their shopping cart within the specified budget.
 
 **Features:**
