@@ -128,10 +128,6 @@ class ShoppingSystem:
         self.budget_entry.pack(pady=10)
         tk.Button(self.scrollable_frame, text="Set Budget", command=self.set_budget, font=("Arial", 14), bg="#4CAF50", fg="white", relief="raised", bd=3).pack(pady=10)
 
-        self.search_entry = tk.Entry(self.scrollable_frame, font=("Arial", 12), relief="solid", bd=2, width=20)
-        self.search_entry.pack(pady=10)
-        tk.Button(self.scrollable_frame, text="Search Items", command=self.search_items, font=("Arial", 14), bg="black", fg="white", relief="raised", bd=3).pack(pady=10)
-
         self.category_frame = tk.Frame(self.scrollable_frame, bg="#f1f1f1")
         self.items_frame = tk.Frame(self.scrollable_frame, bg="#f1f1f1")
         self.cart_frame = tk.Frame(self.scrollable_frame, bg="#f1f1f1")
@@ -151,6 +147,10 @@ class ShoppingSystem:
 
     def show_categories(self):
         self.category_frame.destroy()
+        self.search_entry = tk.Entry(self.scrollable_frame, font=("Arial", 12), relief="solid", bd=2, width=20)
+        self.search_entry.pack(pady=10)
+        tk.Button(self.scrollable_frame, text="Search Items", command=self.search_items, font=("Arial", 14), bg="black", fg="white", relief="raised", bd=3).pack(pady=10)
+
         self.category_frame = tk.Frame(self.scrollable_frame, bg="#f1f1f1")
         self.category_frame.pack(pady=10)
 
@@ -208,6 +208,9 @@ class ShoppingSystem:
 
         if new_total > self.budget:
             messagebox.showerror("Budget Exceeded", f"Adding this item exceeds your budget by ₹{new_total-self.budget}")
+            return
+        if products[category][item]['stock'] < qty:
+            messagebox.showerror("Invalid Input", "Invalid Quantity")
             return
 
         if item in self.cart:
