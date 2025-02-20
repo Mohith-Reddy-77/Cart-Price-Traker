@@ -24,11 +24,20 @@ This Shopping System is a simple and interactive application built using Tkinter
 
 <h2>Installation</h2>
 
-**Clone the repository:** gh repo clone Mohith-Reddy-77/Cart-Price-Traker
+**Clone the repository:** 
+```bash
+   gh repo clone Mohith-Reddy-77/Cart-Price-Traker
+   ```
 
-**Navigate to the project directory:** cd Cart-Price-Tracker
+**Navigate to the project directory:**
+```bash
+   cd Cart-Price-Tracker
+   ```
 
-**Run the script:** python cart_tracker.py
+**Run the script:** 
+```bash
+   python cart_tracker.py
+   ```
 
 
 <h2>How to Use</h2>
